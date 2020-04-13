@@ -9,7 +9,6 @@ class LRU_test:
 			test.put(a[i])
 
 		assert test.get_cache() == "7 8 9 10 "
-		assert test.get(7) == 2
 		assert test.get(3) == -1
 		assert test.get_cache() == "7 9 10 3 "
 		assert test.get(3) == 2
