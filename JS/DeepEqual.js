@@ -1,31 +1,30 @@
 function deepEqual(a, b) {
+
 	if (typeof a === 'object' && typeof b === 'object') {
-		let aKey = Object.keys(a)
-		let bKey = Object.keys(b)
-		if (aKey.length === bKey.length) {
-			for (let i = 0; i < aKey.length; i++) {
-				if (deepEqual(aKey[i], bKey[i])) {
-					console.log(aKey[i], bKey[i])
-					continue
+
+		let count = 0
+		const aKeys = Object.keys(a)
+		const bKeys = Object.keys(b)
+		const aLen = aKeys.length
+		const bLen = bKeys.length
+
+		for (let i = 0; i < aLen; i++) {
+		
+			for (let j = 0; j < bLen; j++) {
+
+				if (deepEqual(a[aKeys[i]], b[bKeys[j]])) {
+					count++
 				}
-				else {
-					return false
-				}
-			}			
+
+			}
 		}
-		else {
+		if (count === aLen && count === bLen)
+			return true
+		else 
 			return false
-		}
-
 	}
-	else if (a === b) {
-		return true
-	}
-	else {
-		return false
-	}
-	return true
-
+	else
+		return a === b
 }
 
 
@@ -36,7 +35,7 @@ const one = {
 
 const two = {
 	1:'one',
-	2:'three',
+	2:'two',
 }
 
 const three = {
@@ -47,8 +46,24 @@ const three = {
 	},
 }
 
+const four = {
+	1:'one',
+	2:'two',
+	inner: {
+		key:"value"
+	},
+}
 
+const obj = {
+	here: {
+		is: "an"
+	}, 
+	object: 2
+}
 
-// console.log(deepEqual(5, 5))
-console.log(deepEqual(one, two))
+console.log(deepEqual(5, 5))
+console.log(deepEqual(one, one))
 console.log(deepEqual(one, three))
+console.log(deepEqual(three, four))
+console.log(deepEqual(obj, obj))
+console.log(deepEqual(obj,{object: 2, here: {is: "an"}}))
