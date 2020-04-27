@@ -14,6 +14,7 @@ function deepEqual(a, b) {
 
 				if (deepEqual(a[aKeys[i]], b[bKeys[j]])) {
 					count++
+					break
 				}
 
 			}
@@ -26,7 +27,6 @@ function deepEqual(a, b) {
 	else
 		return a === b
 }
-
 
 const one = {
 	1:'one',
