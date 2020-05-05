@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ToDoList</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
+	<script src="script.js"></script>
+
+</head>
+<body>
+
+	<div class='container'>
+		
+		<h3>To Do List</h3>
+		
+		<ul>
+			
+		</ul>
+
+		<br>
+
+		<form>
+			<div class="form-group">
+			    <input type="text" class="form-control" id="task-text" aria-describedby="emailHelp" placeholder="Enter Task">
+			</div>
+		    <button type="submit" class="btn btn-success" data-type="new">Create</button>
+		    <button type="submit" class="btn btn-danger" data-type="del">Remove</button>
+		    <button type="submit" class="btn btn-primary" data-type="com">Complete</button>
+
+		</form>
+
+		<br>
+
+		<p id='error' style="color:red;"></p>
+
+</body>
+</html>
