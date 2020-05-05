@@ -62,7 +62,7 @@ const obj = {
 }
 
 console.log(deepEqual(5, 5))
-console.log(deepEqual(one, one))
+console.log(deepEqual(one, two))
 console.log(deepEqual(one, three))
 console.log(deepEqual(three, four))
 console.log(deepEqual(obj, obj))
